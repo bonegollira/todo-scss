@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+/* var */
+$g-background-color: #fff;
+
+/* mixin */
+@mixin global-parts ($height: 200px) {
+  width: 100%;
+  height: $height;
+}
+
+@mixin box () {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+}
+
+@mixin font ($size: 12px, $height: 200%, $align: center) {
+  font-size: $size;
+  line-height: $height;
+  text-align: $align;
+}
+
+/* reset */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"MS ゴシック","MS Gothic",sans-serif;
+  font-weight: 300;
+  vertical-align: baseline;
+  color: #333;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  margin: 0 auto;
+  padding: 0;
+  width: 500px;
+  background-color: $g-background-color;
+  -webkit-text-size-adjust: none;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display: block;
+}
+
+/* global */
+
+header.global {
+  @include global-parts(50px);
+  @include font(20px);
+  background-color: $g-background-color;
+}
+
+footer.global {
+  $height: 200px;
+
+  @include global-parts($height);
+  background-color: $g-background-color;
+
+  p {
+    @include font(14px, $height);
+  }
+}
+
+main.global {
+  width: 100%;
+}
+
+/* ToDo */
+.ToDo {
+  $width: 100%;
+  $--width: 90%;
+  $--height: 50px;
+
+  width: $width;
+
+  .ToDo-inputBox {
+    width: $width;
+    height: 50px;
+    border: 1px solid #eee;
+    background-color: #fff;
+
+    .ToDo--input {
+      width: $--width;
+      height: $--height;
+      margin: 0px auto;
+      display: block;
+      @include font(16px, 200%, left);
+    }
+
+  }
+
+  .ToDo-list {
+    width: $width;
+
+    .ToDo--index {
+      width: $--width;
+      margin: 0px auto;
+      border-bottom: 1px solid #eee;
+      overflow: hidden;
+      @include box();
+
+      .ToDo---title {
+        width: 80%;
+        height: inherit;
+        @include font(16px, $--height, left);
+      }
+
+      .ToDo---checkboxBox {
+        width: 20%;
+        height: $--height;
+        text-align: right;
+
+        .ToDo----checkbox[type=checkbox] {
+          width: 20px;
+          height: $--height;
+        }
+
+      }
+    }
+
+  }
+}
+
+.done {
+  color: #aaa;
+  text-decoration: line-through;
+}

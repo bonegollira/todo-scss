@@ -1,0 +1,20 @@
+{
+  "name": "todo-sass",
+  "version": "0.0.0",
+  "description": "practive sass developing todo",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bonegollira/todo-sass.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-sass": "*",
+    "browser-sync": "*",
+    "gulp-minify-css": "*",
+    "gulp-plumber": "*"
+  }
+}

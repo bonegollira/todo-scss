@@ -1,0 +1,8 @@
+{
+  "name": "todo-sass",
+  "version": "0.0.0",
+  "description": "practive sass developing todo",
+  "dependencies": {
+    "jquery": "*"
+  }
+}
